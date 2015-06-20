@@ -4,6 +4,7 @@
   "description": "A Bernoulli Lemniscate drawer for html5 canvas",
   "main": "index.js",
   "scripts": {
+    "example": "./node_modules/browserify/bin/cmd.js --debug example.js > dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/daedelus-j/bernoulli-drawer/issues"
   },
-  "homepage": "https://github.com/daedelus-j/bernoulli-drawer"
+  "homepage": "https://github.com/daedelus-j/bernoulli-drawer",
+  "devDependencies": {
+    "browserify": "^10.2.4"
+  }
 }
