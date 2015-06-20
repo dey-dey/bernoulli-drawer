@@ -9,7 +9,6 @@ var height = c.height = window.innerHeight;
 c.style.top = 0;
 var size = c.width / 4;
 var center = { x: width / 2, y: height / 2 };
-if (width < 500) center.y = height / 2.2;
 var bernoullis = [
   {center: center, size: size, theta: 1.3, direction: 'negative', fillStyle: '#f20af2', velocity: .08 },
   {center: center, size: size, theta: 1.3, direction: 'positive', fillStyle: '#f1a1f9', velocity: .04, radius: 10 },
@@ -36,7 +35,7 @@ var bernoullis = [
   {center: center, size: size, theta: 5,   direction: 'positive', fillStyle: '#0f0fff', velocity: .03, radius: 5 },
   {center: center, size: size, theta: 5.5, direction: 'negative', fillStyle: '#0f0f22', velocity: .03, radius: 6 }
 ].map(function(opts) { return new BernoulliCircle(opts)});
-
+if (width < 500) biggerWidth()
 var ctr = 0;
 function clearCanvas() {
   ctr += .01
@@ -70,6 +69,13 @@ function draw() {
 requestAnimationFrame(draw);
 
 
+function biggerWidth() {
+  var width = window.innerWidth;
+  bernoullis.forEach(function(b) {
+    b.size = width / 2.7;
+  });
+}
+
 window.onresize = function() {
   bernoullis.forEach(function(b) {
     var width = c.height = window.innerWidth;
@@ -77,6 +83,6 @@ window.onresize = function() {
     ctx.clearRect(0, 0, width, height);
     b.center.x = width / 2;
     b.center.y = height / 2;
-    if (width < 500) b.center.y = height / 2.2;
+    if (width < 500) biggerSize();
   });
 }
