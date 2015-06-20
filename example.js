@@ -1,6 +1,5 @@
 'use strict';
 var BernoulliCircle = require('./circle');
-console.log(BernoulliCircle)
 var c = document.querySelector('#canvas');
 var ctx = c.getContext('2d');
 var cos = Math.cos;
@@ -8,7 +7,6 @@ var sin = Math.sin;
 var width = c.width = window.innerWidth;
 var height = c.height = window.innerHeight;
 c.style.top = 0;
-console.log(c.height)
 var size = c.width / 4;
 var center = { x: width / 2, y: height / 2 };
 if (width < 500) center.y = height / 2.2;
@@ -80,6 +78,5 @@ window.onresize = function() {
     b.center.x = width / 2;
     b.center.y = height / 2;
     if (width < 500) b.center.y = height / 2.2;
-    console.log(b.center);
   });
 }
