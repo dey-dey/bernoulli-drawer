@@ -74,7 +74,7 @@ function biggerWidth() {
   var height = window.innerHeight;
   bernoullis.forEach(function(b) {
     b.size = width / 2.7;
-    b.center.y = height / 1.9;
+    b.center.y = height / 1.7;
   });
 }
 
