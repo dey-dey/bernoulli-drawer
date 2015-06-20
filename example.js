@@ -71,8 +71,10 @@ requestAnimationFrame(draw);
 
 function biggerWidth() {
   var width = window.innerWidth;
+  var height = window.innerHeight;
   bernoullis.forEach(function(b) {
     b.size = width / 2.7;
+    b.center.y = width / 1.2;
   });
 }
 
